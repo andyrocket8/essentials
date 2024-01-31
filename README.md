@@ -5,7 +5,7 @@ Essentials is a bundle of useful chunks of code. Simply copy it and use in your 
 
 ## Content
 
-### Classes module
+### classes module
 #### Singleton classes (singleton.py)
 
 1. Singleton - class based on simple inheritance.
@@ -25,6 +25,22 @@ Essentials is a bundle of useful chunks of code. Simply copy it and use in your 
 2. NamedTempDir - context manager with Path interface in context manager  
 
    Context manager acts as tempfile.TemporaryDirectory but returns Path like object
+
+### decorators module
+
+#### exception_wrapper 
+
+1. exception_catch - decorator to catch exceptions in wrapped code     
+   ##### decorator params:
+   - exception_range: tuple[Type[Exception], ...] = (Exception,)  
+     Catch exception range, pass all necessary exception classes for catch   
+   - exception_value: Optional[T] = None     
+     What we should return on exception catch
+   - callback: Callable[[str, Exception], None] = log_exception  
+     Callable to execute on exception fired
+   ##### Usage patterns:
+   - log an error and return nothing or default value (could be set in "exception_value")
+   - log an error and raise expected exception in calling routine 
 
 ### Unit testing
 Use pytest for module unit testing
