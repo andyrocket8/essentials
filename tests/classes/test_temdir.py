@@ -13,8 +13,8 @@ def test_tempdir():
     with NamedTempDir() as temp_dir:
         nested_dir: Optional[Path]
         with TempDir(temp_dir) as nested_temp_dir_obj:
-            nested_dir = nested_temp_dir_obj.dir
-            assert nested_temp_dir_obj.dir.is_dir(), 'Nested dir does not exist'
+            nested_dir = nested_temp_dir_obj.temp_dir
+            assert nested_temp_dir_obj.temp_dir.is_dir(), 'Nested dir does not exist'
         assert not nested_dir.is_dir(), 'Nested dir should not exist (after __exit__)'
     assert temp_dir is not None, 'Context manager returns filled Path object (None check)'
 
@@ -23,5 +23,5 @@ def test_tempdir():
     with pytest.raises(ValueError):
         # nested_temp_dir_obj.dir is Path sibling, so if assertion won't raise we see assertion fail check
         assert isinstance(
-            nested_temp_dir_obj.dir, str
+            nested_temp_dir_obj.temp_dir, str
         ), 'Should raise exception here so this assert should not execute successfully'
