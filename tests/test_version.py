@@ -3,9 +3,9 @@ import os
 
 import pytest
 
-from version import POETRY_CONFIG_FIlE
 from utils.file_utils import create_temp_dir
 from utils.file_utils import remove_dir
+from version import POETRY_CONFIG_FIlE
 from version import get_version
 from version import load_version
 

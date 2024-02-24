@@ -2,8 +2,8 @@
 
 lint:
 	poetry run isort .
-	poetry run flake8 -v --config setup.cfg
 	poetry run black .
+	poetry run flake8 -v --config setup.cfg
 	poetry run mypy .
 
 test:

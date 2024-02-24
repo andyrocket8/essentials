@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from os import getcwd
 from pathlib import Path
 from typing import Union
 
@@ -9,9 +10,7 @@ POETRY_CONFIG_FIlE = 'pyproject.toml'
 try:
     import tomllib
 except ModuleNotFoundError:
-    import tomli as tomllib  # type: ignore[no-redef]
-
-from os import getcwd
+    import tomli as tomllib  # type: ignore[no-redef, import-not-found]
 
 
 @dataclass(frozen=True)
