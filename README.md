@@ -42,5 +42,20 @@ Essentials is a bundle of useful chunks of code. Simply copy it and use in your 
    - log an error and return nothing or default value (could be set in "exception_value")
    - log an error and raise expected exception in calling routine 
 
+#### Version from pyproject.toml 
+
+1. Application version from pyproject.toml   
+  
+Place file in the root folder of your project. Version information could be obtained from pyproject.toml with:
+```python
+from version import get_version
+
+def main():
+    print(get_version())
+
+```
+
+Don't forget to deploy __pyproject.toml__ to deployment code!
+
 ### Unit testing
 Use pytest for module unit testing

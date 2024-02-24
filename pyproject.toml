@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "essentials"
-version = "0.1.0"
+version = "0.2.0"
 description = ""
 authors = ["Dmitriev Andrey <justkeepwalking@yandex.ru>"]
 readme = "README.md"
