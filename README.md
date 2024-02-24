@@ -46,7 +46,7 @@ Essentials is a bundle of useful chunks of code. Simply copy it and use in your 
 
 1. Application version from pyproject.toml
 
-Place file in the root folder of your project. Version information could be obtained from pyproject.toml with:
+Place __version.py__ file in the root folder of your project. Version information could be obtained from pyproject.toml with:
 ```python
 from version import get_version
 
