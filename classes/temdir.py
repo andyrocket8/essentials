@@ -36,7 +36,7 @@ class TempDir:
             self._temp_dir = None
 
     @property
-    def dir(self) -> Path:
+    def temp_dir(self) -> Path:
         if self._temp_dir is None:
             raise ValueError('Temporary dir is not created')
         return self._temp_dir
@@ -52,7 +52,7 @@ class NamedTempDir:
 
     def __enter__(self) -> Path:
         self.temp_dir.__enter__()
-        return self.temp_dir.dir
+        return self.temp_dir.temp_dir
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.temp_dir.__exit__(exc_type, exc_val, exc_tb)
